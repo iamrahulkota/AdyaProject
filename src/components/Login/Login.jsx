@@ -1,7 +1,14 @@
 import React, { useState } from 'react'
+import { login } from '../../features/userSlice'
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../features/userSlice'
+
 
 function Login() {
+
+  const user = useSelector(selectUser);
 
   const [name,setName] = useState("");
   const [email,setEmail] = useState("");
@@ -11,11 +18,25 @@ function Login() {
   console.log(email);
   console.log(password);
 
+  const dispatch = useDispatch();
+
+  function handleSubmit(e){
+    e.preventDefault();
+
+    dispatch(login({
+      name : name,
+      email : email,
+      password : password,
+      loggedIn : true,
+    }));
+  }
+
   const navigate = useNavigate();
 
   function onHandleSignin() {
     navigate('/signin');
   }
+
 
   return (
     <>
@@ -29,7 +50,7 @@ function Login() {
                 <div className='w-32 h-1 border-b-2 border-yellow-400 rounded-2xl my-2'></div>
               </div>
               <div className='my-20 flex flex-col'>
-                <form>
+                <form onSubmit={(e)=> handleSubmit(e)}>
                   <label className='text-xl font-semibold font-Poppins text-black my-5'>Name :</label>
                   <br></br>
                   <input 
@@ -63,7 +84,8 @@ function Login() {
                 </input>
                   <button 
                     type='submit'
-                    className='bg-black font-semibold font-Poppins text-white py-3 px-20 my-20 w-full md:w-4/12'>Log in
+                    className='bg-black font-semibold font-Poppins text-white py-3 px-20 my-20 w-full md:w-4/12'
+                    >Log in
                   </button>
                 </form>
               </div>
