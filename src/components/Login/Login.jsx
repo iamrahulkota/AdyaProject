@@ -1,6 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
+
+  const navigate = useNavigate();
+
+  function onHandleSignin() {
+    navigate('/signin');
+  }
+
   return (
     <>
       <div className='w-screen  bg-white'>
@@ -9,7 +17,7 @@ function Login() {
             <div className='w-full md:w-2/4'>
               <div>
                 <h1 className='text-black mb-2 pt-10 text-4xl font-semibold font-Poppins'>Login into your account</h1>
-                <p className='text-sm text-[#a5a5a5] font-Roboto'>Don't have an account? <button className='text-black text-lg font-semibold'> Create a free account</button></p>
+                <p className='text-sm text-[#a5a5a5] font-Roboto'>Don't have an account? <button className='text-black text-lg font-semibold' onClick={onHandleSignin}> Create a free account</button></p>
                 <div className='w-32 h-1 border-b-2 border-yellow-400 rounded-2xl my-2'></div>
               </div>
               <div className='my-20 flex flex-col'>

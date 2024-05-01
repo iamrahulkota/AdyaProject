@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Header() {
+  const navigate = useNavigate();
+  function onHandleLogin(){
+    
+    navigate('/login');
+  }
+
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const onToggleMenu = () => {
@@ -48,7 +55,7 @@ function Header() {
           </ul>
         </div>
         <div className="flex items-center gap-6">
-          <button className="bg-gray-900 text-lg font-semibold font-Poppins text-white px-5 py-2 rounded-full hover:bg-[#87acec]">
+          <button className="bg-gray-900 text-lg font-semibold font-Poppins text-white px-5 py-2 rounded-full hover:bg-[#87acec]" onClick={onHandleLogin}>
             Sign in
           </button>
           <i className="fa-solid fa-bars text-3xl cursor-pointer md:hidden" onClick={onToggleMenu} name={menuOpen ? 'close' : 'menu'}></i>
