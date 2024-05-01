@@ -11,6 +11,11 @@ function Desc() {
     const id = SearchParams.get('id');
     console.log(id);
 
+    const navigate = useNavigate();
+    function onHandleBookNow() {
+      navigate('/payment');
+    }
+
 
     const descOfHouse = [
         {
@@ -108,7 +113,7 @@ function Desc() {
                   <p className='text-black font-Roboto text-lg'>{HouseDetails.houseexterior}</p>
                 </div>
               </div>
-              <button className="mx-4 my-20 font-Roboto bg-black px-10 py-2 text-sm font-semibold text-white">Book Now</button>
+              <button className="mx-4 my-20 font-Roboto bg-black px-10 py-2 text-sm font-semibold text-white" onClick={onHandleBookNow}>Book Now</button>
             </div>
             <div className='w-full md:w-2/4 flex flex-wrap'>
                   <div className=''>

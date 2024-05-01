@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function Login() {
+
+  const [name,setName] = useState("");
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("");
+
+  console.log(name);
+  console.log(email);
+  console.log(password);
 
   const navigate = useNavigate();
 
@@ -21,11 +29,43 @@ function Login() {
                 <div className='w-32 h-1 border-b-2 border-yellow-400 rounded-2xl my-2'></div>
               </div>
               <div className='my-20 flex flex-col'>
-                <label className='text-xl font-semibold font-Poppins text-black my-5'>Email :</label>
-                <input type='text' placeholder='Enter your Email' className='text-lg border text-semibold font-Roboto text-black w-full md:w-4/5 h-12 px-10'></input>
-                <label className='text-xl font-semibold font-Poppins text-black my-5'>Password :</label>
-                <input type='text' placeholder='Enter your Password' className='text-lg border text-semibold font-Roboto text-black w-full md:w-4/5 h-12 px-10'></input>
-                <button className='bg-black font-semibold font-Poppins text-white py-3 px-20 my-20 w-full md:w-4/12'>Log in</button>
+                <form>
+                  <label className='text-xl font-semibold font-Poppins text-black my-5'>Name :</label>
+                  <br></br>
+                  <input 
+                    type='name' 
+                    placeholder='Enter your Name' 
+                    className='text-lg border text-semibold font-Roboto text-black w-full md:w-4/5 h-12 px-10' 
+                    value={name} 
+                    onChange={(e)=> setName(e.target.value)}>
+                  </input>
+                  <br></br>
+                  <br></br>
+                  <label className='text-xl font-semibold font-Poppins text-black '>Email :</label>
+                  <br></br>
+                  <input 
+                    type='email' 
+                    placeholder='Enter your Email' 
+                    className='text-lg border text-semibold font-Roboto text-black w-full md:w-4/5 h-12 px-10' 
+                    value={email} 
+                    onChange={(e)=> setEmail(e.target.value)}>
+                  </input>
+                  <br></br>
+                  <br></br>
+                  <label className='text-xl font-semibold font-Poppins text-black'>Password :</label>
+                  <br></br>
+                  <input 
+                    type='password' 
+                    placeholder='Enter your Password' 
+                    className='text-lg border text-semibold font-Roboto text-black w-full md:w-4/5 h-12 px-10' 
+                    value={password} 
+                    onChange={(e)=> setPassword(e.target.value)}>
+                </input>
+                  <button 
+                    type='submit'
+                    className='bg-black font-semibold font-Poppins text-white py-3 px-20 my-20 w-full md:w-4/12'>Log in
+                  </button>
+                </form>
               </div>
             </div>
 

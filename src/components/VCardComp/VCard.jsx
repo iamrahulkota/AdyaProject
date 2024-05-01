@@ -4,7 +4,6 @@ import {useNavigate } from "react-router-dom";
 function VCard({houseImg,houseTitle,housepara,housePrice,houseid}) {
     const navigate = useNavigate();
 
-
     function onClickHandle(id){
         console.log(id);
         navigate(`housingdesc?id=${id}`);
