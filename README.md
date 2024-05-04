@@ -1,8 +1,12 @@
-# React + Vite
+# House Rental FrontEnd Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# This Project Live Link - Deployed on Vercel
+https://adya-project.vercel.app/
 
-Currently, two official plugins are available:
+# Technologies Used
+>> Vite - Fast React build tool
+>> React - JavaScript library for building UIs
+>> Tailwind CSS - Responsive Development & Utility-first CSS framework 
+>> Redux Toolkit - Redux state management
+>> React-Router-dom - Declarative routing for React
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
